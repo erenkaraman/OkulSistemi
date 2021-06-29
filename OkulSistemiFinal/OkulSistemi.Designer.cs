@@ -61,15 +61,9 @@ namespace OkulSistemiFinal
             this.lvSoyisim = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.tpDersler = new System.Windows.Forms.TabPage();
-            this.mlvdersdetay = new MaterialSkin.Controls.MaterialListView();
-            this.ml2ad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ml2soyad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.mlvOgretmenAdi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.mlvOgretmenSoyadi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
-            this.tpÖğretmen = new System.Windows.Forms.TabPage();
-            this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.mlders = new MaterialSkin.Controls.MaterialListView();
+            this.mldersid = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.mldersadi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.mbtndetayders = new MaterialSkin.Controls.MaterialButton();
             this.mlblalertders = new MaterialSkin.Controls.MaterialLabel();
             this.mbtntemizleders = new MaterialSkin.Controls.MaterialButton();
@@ -78,10 +72,21 @@ namespace OkulSistemiFinal
             this.mbtnekleders = new MaterialSkin.Controls.MaterialButton();
             this.mtxtdersadi = new MaterialSkin.Controls.MaterialTextBox();
             this.mtxtidders = new MaterialSkin.Controls.MaterialTextBox();
-            this.mlders = new MaterialSkin.Controls.MaterialListView();
-            this.mldersid = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.mldersadi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.mlvdersdetay = new MaterialSkin.Controls.MaterialListView();
+            this.ml2ad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ml2soyad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.mlvOgretmenAdi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.mlvOgretmenSoyadi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
+            this.tpÖğretmen = new System.Windows.Forms.TabPage();
+            this.mlogretmendetay = new MaterialSkin.Controls.MaterialListView();
+            this.mldetayDersAdi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.mldetayOgrenciAdi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.mldetayOgrenciSoyadi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.mlOgretmen = new MaterialSkin.Controls.MaterialListView();
+            this.mlidogretmen = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.mladogretmen = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.mlsoyadogretmen = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.mbtnogretmendetay = new MaterialSkin.Controls.MaterialButton();
             this.mlblogretmen = new MaterialSkin.Controls.MaterialLabel();
             this.mbtnogretmentemizle = new MaterialSkin.Controls.MaterialButton();
@@ -91,9 +96,9 @@ namespace OkulSistemiFinal
             this.mtxtogretmensoyadi = new MaterialSkin.Controls.MaterialTextBox();
             this.mtxtogretmenadi = new MaterialSkin.Controls.MaterialTextBox();
             this.mtxtogretmenid = new MaterialSkin.Controls.MaterialTextBox();
-            this.mlidogretmen = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.mladogretmen = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.mlsoyadogretmen = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.tpDersSecim = new System.Windows.Forms.TabPage();
             this.materialTabControl1.SuspendLayout();
             this.tpAnasayfa.SuspendLayout();
             this.materialCard3.SuspendLayout();
@@ -110,6 +115,7 @@ namespace OkulSistemiFinal
             this.materialTabControl1.Controls.Add(this.tpÖğrenciler);
             this.materialTabControl1.Controls.Add(this.tpDersler);
             this.materialTabControl1.Controls.Add(this.tpÖğretmen);
+            this.materialTabControl1.Controls.Add(this.tpDersSecim);
             this.materialTabControl1.Depth = 0;
             this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialTabControl1.ImageList = this.imageList1;
@@ -553,103 +559,37 @@ namespace OkulSistemiFinal
             this.tpDersler.TabIndex = 2;
             this.tpDersler.Text = "Dersler";
             // 
-            // mlvdersdetay
+            // mlders
             // 
-            this.mlvdersdetay.AutoSizeTable = false;
-            this.mlvdersdetay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.mlvdersdetay.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.mlvdersdetay.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.ml2ad,
-            this.ml2soyad,
-            this.mlvOgretmenAdi,
-            this.mlvOgretmenSoyadi});
-            this.mlvdersdetay.Depth = 0;
-            this.mlvdersdetay.FullRowSelect = true;
-            this.mlvdersdetay.HideSelection = false;
-            this.mlvdersdetay.Location = new System.Drawing.Point(35, 73);
-            this.mlvdersdetay.MinimumSize = new System.Drawing.Size(200, 100);
-            this.mlvdersdetay.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.mlvdersdetay.MouseState = MaterialSkin.MouseState.OUT;
-            this.mlvdersdetay.Name = "mlvdersdetay";
-            this.mlvdersdetay.OwnerDraw = true;
-            this.mlvdersdetay.Size = new System.Drawing.Size(560, 210);
-            this.mlvdersdetay.TabIndex = 2;
-            this.mlvdersdetay.UseCompatibleStateImageBehavior = false;
-            this.mlvdersdetay.View = System.Windows.Forms.View.Details;
+            this.mlders.AutoSizeTable = false;
+            this.mlders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.mlders.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.mlders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.mldersid,
+            this.mldersadi});
+            this.mlders.Depth = 0;
+            this.mlders.FullRowSelect = true;
+            this.mlders.HideSelection = false;
+            this.mlders.Location = new System.Drawing.Point(33, 73);
+            this.mlders.MinimumSize = new System.Drawing.Size(200, 100);
+            this.mlders.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.mlders.MouseState = MaterialSkin.MouseState.OUT;
+            this.mlders.Name = "mlders";
+            this.mlders.OwnerDraw = true;
+            this.mlders.Size = new System.Drawing.Size(560, 210);
+            this.mlders.TabIndex = 19;
+            this.mlders.UseCompatibleStateImageBehavior = false;
+            this.mlders.View = System.Windows.Forms.View.Details;
+            this.mlders.MouseClick += new System.Windows.Forms.MouseEventHandler(this.mlders_MouseClick);
             // 
-            // ml2ad
+            // mldersid
             // 
-            this.ml2ad.Text = "Ad";
-            this.ml2ad.Width = 100;
+            this.mldersid.Text = "ID";
             // 
-            // ml2soyad
+            // mldersadi
             // 
-            this.ml2soyad.Text = "Soyad";
-            this.ml2soyad.Width = 100;
-            // 
-            // mlvOgretmenAdi
-            // 
-            this.mlvOgretmenAdi.Text = "Öğretmen Adı";
-            this.mlvOgretmenAdi.Width = 150;
-            // 
-            // mlvOgretmenSoyadi
-            // 
-            this.mlvOgretmenSoyadi.Text = "Öğretmen Soyadı";
-            this.mlvOgretmenSoyadi.Width = 150;
-            // 
-            // materialLabel5
-            // 
-            this.materialLabel5.AutoSize = true;
-            this.materialLabel5.Depth = 0;
-            this.materialLabel5.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel5.Location = new System.Drawing.Point(32, 32);
-            this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel5.Name = "materialLabel5";
-            this.materialLabel5.Size = new System.Drawing.Size(50, 19);
-            this.materialLabel5.TabIndex = 1;
-            this.materialLabel5.Text = "Dersler";
-            // 
-            // tpÖğretmen
-            // 
-            this.tpÖğretmen.BackColor = System.Drawing.Color.White;
-            this.tpÖğretmen.Controls.Add(this.mlOgretmen);
-            this.tpÖğretmen.Controls.Add(this.mbtnogretmendetay);
-            this.tpÖğretmen.Controls.Add(this.mlblogretmen);
-            this.tpÖğretmen.Controls.Add(this.mbtnogretmentemizle);
-            this.tpÖğretmen.Controls.Add(this.mbtnogretmenguncelle);
-            this.tpÖğretmen.Controls.Add(this.mbtnsilogretmen);
-            this.tpÖğretmen.Controls.Add(this.mbtnekleogretmen);
-            this.tpÖğretmen.Controls.Add(this.mtxtogretmensoyadi);
-            this.tpÖğretmen.Controls.Add(this.mtxtogretmenadi);
-            this.tpÖğretmen.Controls.Add(this.mtxtogretmenid);
-            this.tpÖğretmen.Controls.Add(this.materialLabel6);
-            this.tpÖğretmen.ImageKey = "user.png";
-            this.tpÖğretmen.Location = new System.Drawing.Point(4, 39);
-            this.tpÖğretmen.Name = "tpÖğretmen";
-            this.tpÖğretmen.Size = new System.Drawing.Size(786, 340);
-            this.tpÖğretmen.TabIndex = 3;
-            this.tpÖğretmen.Text = "Öğretmen";
-            // 
-            // materialLabel6
-            // 
-            this.materialLabel6.AutoSize = true;
-            this.materialLabel6.Depth = 0;
-            this.materialLabel6.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel6.Location = new System.Drawing.Point(32, 32);
-            this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel6.Name = "materialLabel6";
-            this.materialLabel6.Size = new System.Drawing.Size(87, 19);
-            this.materialLabel6.TabIndex = 0;
-            this.materialLabel6.Text = "Öğretmenler";
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "group.png");
-            this.imageList1.Images.SetKeyName(1, "open-book.png");
-            this.imageList1.Images.SetKeyName(2, "user.png");
-            this.imageList1.Images.SetKeyName(3, "home.png");
+            this.mldersadi.Text = "Ders Adı";
+            this.mldersadi.Width = 250;
             // 
             // mbtndetayders
             // 
@@ -762,7 +702,7 @@ namespace OkulSistemiFinal
             // 
             this.mtxtdersadi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mtxtdersadi.Depth = 0;
-            this.mtxtdersadi.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.mtxtdersadi.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.mtxtdersadi.LeadingIcon = null;
             this.mtxtdersadi.Location = new System.Drawing.Point(601, 129);
             this.mtxtdersadi.MaxLength = 50;
@@ -778,7 +718,7 @@ namespace OkulSistemiFinal
             // 
             this.mtxtidders.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mtxtidders.Depth = 0;
-            this.mtxtidders.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.mtxtidders.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.mtxtidders.LeadingIcon = null;
             this.mtxtidders.Location = new System.Drawing.Point(601, 73);
             this.mtxtidders.MaxLength = 50;
@@ -791,37 +731,121 @@ namespace OkulSistemiFinal
             this.mtxtidders.Text = "";
             this.mtxtidders.TrailingIcon = null;
             // 
-            // mlders
+            // mlvdersdetay
             // 
-            this.mlders.AutoSizeTable = false;
-            this.mlders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.mlders.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.mlders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.mldersid,
-            this.mldersadi});
-            this.mlders.Depth = 0;
-            this.mlders.FullRowSelect = true;
-            this.mlders.HideSelection = false;
-            this.mlders.Location = new System.Drawing.Point(33, 73);
-            this.mlders.MinimumSize = new System.Drawing.Size(200, 100);
-            this.mlders.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.mlders.MouseState = MaterialSkin.MouseState.OUT;
-            this.mlders.Name = "mlders";
-            this.mlders.OwnerDraw = true;
-            this.mlders.Size = new System.Drawing.Size(560, 210);
-            this.mlders.TabIndex = 19;
-            this.mlders.UseCompatibleStateImageBehavior = false;
-            this.mlders.View = System.Windows.Forms.View.Details;
-            this.mlders.MouseClick += new System.Windows.Forms.MouseEventHandler(this.mlders_MouseClick);
+            this.mlvdersdetay.AutoSizeTable = false;
+            this.mlvdersdetay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.mlvdersdetay.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.mlvdersdetay.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ml2ad,
+            this.ml2soyad,
+            this.mlvOgretmenAdi,
+            this.mlvOgretmenSoyadi});
+            this.mlvdersdetay.Depth = 0;
+            this.mlvdersdetay.FullRowSelect = true;
+            this.mlvdersdetay.HideSelection = false;
+            this.mlvdersdetay.Location = new System.Drawing.Point(35, 73);
+            this.mlvdersdetay.MinimumSize = new System.Drawing.Size(200, 100);
+            this.mlvdersdetay.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.mlvdersdetay.MouseState = MaterialSkin.MouseState.OUT;
+            this.mlvdersdetay.Name = "mlvdersdetay";
+            this.mlvdersdetay.OwnerDraw = true;
+            this.mlvdersdetay.Size = new System.Drawing.Size(560, 210);
+            this.mlvdersdetay.TabIndex = 2;
+            this.mlvdersdetay.UseCompatibleStateImageBehavior = false;
+            this.mlvdersdetay.View = System.Windows.Forms.View.Details;
             // 
-            // mldersid
+            // ml2ad
             // 
-            this.mldersid.Text = "ID";
+            this.ml2ad.Text = "Ad";
+            this.ml2ad.Width = 100;
             // 
-            // mldersadi
+            // ml2soyad
             // 
-            this.mldersadi.Text = "Ders Adı";
-            this.mldersadi.Width = 250;
+            this.ml2soyad.Text = "Soyad";
+            this.ml2soyad.Width = 100;
+            // 
+            // mlvOgretmenAdi
+            // 
+            this.mlvOgretmenAdi.Text = "Öğretmen Adı";
+            this.mlvOgretmenAdi.Width = 150;
+            // 
+            // mlvOgretmenSoyadi
+            // 
+            this.mlvOgretmenSoyadi.Text = "Öğretmen Soyadı";
+            this.mlvOgretmenSoyadi.Width = 150;
+            // 
+            // materialLabel5
+            // 
+            this.materialLabel5.AutoSize = true;
+            this.materialLabel5.Depth = 0;
+            this.materialLabel5.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel5.Location = new System.Drawing.Point(32, 32);
+            this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel5.Name = "materialLabel5";
+            this.materialLabel5.Size = new System.Drawing.Size(50, 19);
+            this.materialLabel5.TabIndex = 1;
+            this.materialLabel5.Text = "Dersler";
+            // 
+            // tpÖğretmen
+            // 
+            this.tpÖğretmen.BackColor = System.Drawing.Color.White;
+            this.tpÖğretmen.Controls.Add(this.mlogretmendetay);
+            this.tpÖğretmen.Controls.Add(this.mlOgretmen);
+            this.tpÖğretmen.Controls.Add(this.mbtnogretmendetay);
+            this.tpÖğretmen.Controls.Add(this.mlblogretmen);
+            this.tpÖğretmen.Controls.Add(this.mbtnogretmentemizle);
+            this.tpÖğretmen.Controls.Add(this.mbtnogretmenguncelle);
+            this.tpÖğretmen.Controls.Add(this.mbtnsilogretmen);
+            this.tpÖğretmen.Controls.Add(this.mbtnekleogretmen);
+            this.tpÖğretmen.Controls.Add(this.mtxtogretmensoyadi);
+            this.tpÖğretmen.Controls.Add(this.mtxtogretmenadi);
+            this.tpÖğretmen.Controls.Add(this.mtxtogretmenid);
+            this.tpÖğretmen.Controls.Add(this.materialLabel6);
+            this.tpÖğretmen.ImageKey = "user.png";
+            this.tpÖğretmen.Location = new System.Drawing.Point(4, 39);
+            this.tpÖğretmen.Name = "tpÖğretmen";
+            this.tpÖğretmen.Size = new System.Drawing.Size(786, 340);
+            this.tpÖğretmen.TabIndex = 3;
+            this.tpÖğretmen.Text = "Öğretmen";
+            // 
+            // mlogretmendetay
+            // 
+            this.mlogretmendetay.AutoSizeTable = false;
+            this.mlogretmendetay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.mlogretmendetay.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.mlogretmendetay.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.mldetayDersAdi,
+            this.mldetayOgrenciAdi,
+            this.mldetayOgrenciSoyadi});
+            this.mlogretmendetay.Depth = 0;
+            this.mlogretmendetay.FullRowSelect = true;
+            this.mlogretmendetay.HideSelection = false;
+            this.mlogretmendetay.Location = new System.Drawing.Point(25, 65);
+            this.mlogretmendetay.MinimumSize = new System.Drawing.Size(200, 100);
+            this.mlogretmendetay.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.mlogretmendetay.MouseState = MaterialSkin.MouseState.OUT;
+            this.mlogretmendetay.Name = "mlogretmendetay";
+            this.mlogretmendetay.OwnerDraw = true;
+            this.mlogretmendetay.Size = new System.Drawing.Size(560, 210);
+            this.mlogretmendetay.TabIndex = 22;
+            this.mlogretmendetay.UseCompatibleStateImageBehavior = false;
+            this.mlogretmendetay.View = System.Windows.Forms.View.Details;
+            // 
+            // mldetayDersAdi
+            // 
+            this.mldetayDersAdi.Text = "Ders Adı";
+            this.mldetayDersAdi.Width = 150;
+            // 
+            // mldetayOgrenciAdi
+            // 
+            this.mldetayOgrenciAdi.Text = "Öğrenci Adı";
+            this.mldetayOgrenciAdi.Width = 150;
+            // 
+            // mldetayOgrenciSoyadi
+            // 
+            this.mldetayOgrenciSoyadi.Text = "Öğrenci Soyadı";
+            this.mldetayOgrenciSoyadi.Width = 150;
             // 
             // mlOgretmen
             // 
@@ -847,6 +871,20 @@ namespace OkulSistemiFinal
             this.mlOgretmen.View = System.Windows.Forms.View.Details;
             this.mlOgretmen.MouseClick += new System.Windows.Forms.MouseEventHandler(this.mlOgretmen_MouseClick);
             // 
+            // mlidogretmen
+            // 
+            this.mlidogretmen.Text = "ID";
+            // 
+            // mladogretmen
+            // 
+            this.mladogretmen.Text = "Ad";
+            this.mladogretmen.Width = 150;
+            // 
+            // mlsoyadogretmen
+            // 
+            this.mlsoyadogretmen.Text = "Soyad";
+            this.mlsoyadogretmen.Width = 150;
+            // 
             // mbtnogretmendetay
             // 
             this.mbtnogretmendetay.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -864,6 +902,7 @@ namespace OkulSistemiFinal
             this.mbtnogretmendetay.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.mbtnogretmendetay.UseAccentColor = false;
             this.mbtnogretmendetay.UseVisualStyleBackColor = true;
+            this.mbtnogretmendetay.Click += new System.EventHandler(this.mbtnogretmendetay_Click);
             // 
             // mlblogretmen
             // 
@@ -894,6 +933,7 @@ namespace OkulSistemiFinal
             this.mbtnogretmentemizle.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.mbtnogretmentemizle.UseAccentColor = false;
             this.mbtnogretmentemizle.UseVisualStyleBackColor = true;
+            this.mbtnogretmentemizle.Click += new System.EventHandler(this.mbtnogretmentemizle_Click);
             // 
             // mbtnogretmenguncelle
             // 
@@ -912,6 +952,7 @@ namespace OkulSistemiFinal
             this.mbtnogretmenguncelle.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.mbtnogretmenguncelle.UseAccentColor = false;
             this.mbtnogretmenguncelle.UseVisualStyleBackColor = true;
+            this.mbtnogretmenguncelle.Click += new System.EventHandler(this.mbtnogretmenguncelle_Click);
             // 
             // mbtnsilogretmen
             // 
@@ -930,6 +971,7 @@ namespace OkulSistemiFinal
             this.mbtnsilogretmen.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.mbtnsilogretmen.UseAccentColor = false;
             this.mbtnsilogretmen.UseVisualStyleBackColor = true;
+            this.mbtnsilogretmen.Click += new System.EventHandler(this.mbtnsilogretmen_Click);
             // 
             // mbtnekleogretmen
             // 
@@ -948,12 +990,13 @@ namespace OkulSistemiFinal
             this.mbtnekleogretmen.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.mbtnekleogretmen.UseAccentColor = false;
             this.mbtnekleogretmen.UseVisualStyleBackColor = true;
+            this.mbtnekleogretmen.Click += new System.EventHandler(this.mbtnekleogretmen_Click);
             // 
             // mtxtogretmensoyadi
             // 
             this.mtxtogretmensoyadi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mtxtogretmensoyadi.Depth = 0;
-            this.mtxtogretmensoyadi.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.mtxtogretmensoyadi.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.mtxtogretmensoyadi.LeadingIcon = null;
             this.mtxtogretmensoyadi.Location = new System.Drawing.Point(591, 132);
             this.mtxtogretmensoyadi.MaxLength = 50;
@@ -969,7 +1012,7 @@ namespace OkulSistemiFinal
             // 
             this.mtxtogretmenadi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mtxtogretmenadi.Depth = 0;
-            this.mtxtogretmenadi.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.mtxtogretmenadi.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.mtxtogretmenadi.LeadingIcon = null;
             this.mtxtogretmenadi.Location = new System.Drawing.Point(591, 76);
             this.mtxtogretmenadi.MaxLength = 50;
@@ -985,31 +1028,50 @@ namespace OkulSistemiFinal
             // 
             this.mtxtogretmenid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mtxtogretmenid.Depth = 0;
-            this.mtxtogretmenid.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.mtxtogretmenid.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.mtxtogretmenid.LeadingIcon = null;
             this.mtxtogretmenid.Location = new System.Drawing.Point(591, 20);
             this.mtxtogretmenid.MaxLength = 50;
             this.mtxtogretmenid.MouseState = MaterialSkin.MouseState.OUT;
             this.mtxtogretmenid.Multiline = false;
             this.mtxtogretmenid.Name = "mtxtogretmenid";
+            this.mtxtogretmenid.ReadOnly = true;
             this.mtxtogretmenid.Size = new System.Drawing.Size(157, 50);
             this.mtxtogretmenid.TabIndex = 12;
             this.mtxtogretmenid.Text = "";
             this.mtxtogretmenid.TrailingIcon = null;
             // 
-            // mlidogretmen
+            // materialLabel6
             // 
-            this.mlidogretmen.Text = "ID";
+            this.materialLabel6.AutoSize = true;
+            this.materialLabel6.Depth = 0;
+            this.materialLabel6.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel6.Location = new System.Drawing.Point(32, 32);
+            this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel6.Name = "materialLabel6";
+            this.materialLabel6.Size = new System.Drawing.Size(87, 19);
+            this.materialLabel6.TabIndex = 0;
+            this.materialLabel6.Text = "Öğretmenler";
             // 
-            // mladogretmen
+            // imageList1
             // 
-            this.mladogretmen.Text = "Ad";
-            this.mladogretmen.Width = 150;
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "group.png");
+            this.imageList1.Images.SetKeyName(1, "open-book.png");
+            this.imageList1.Images.SetKeyName(2, "user.png");
+            this.imageList1.Images.SetKeyName(3, "home.png");
+            this.imageList1.Images.SetKeyName(4, "exchange.png");
             // 
-            // mlsoyadogretmen
+            // tpDersSecim
             // 
-            this.mlsoyadogretmen.Text = "Soyad";
-            this.mlsoyadogretmen.Width = 150;
+            this.tpDersSecim.ImageKey = "exchange.png";
+            this.tpDersSecim.Location = new System.Drawing.Point(4, 39);
+            this.tpDersSecim.Name = "tpDersSecim";
+            this.tpDersSecim.Size = new System.Drawing.Size(786, 340);
+            this.tpDersSecim.TabIndex = 4;
+            this.tpDersSecim.Text = "Ders Seçimi";
+            this.tpDersSecim.UseVisualStyleBackColor = true;
             // 
             // OkulSistemi
             // 
@@ -1104,5 +1166,10 @@ namespace OkulSistemiFinal
         private MaterialSkin.Controls.MaterialTextBox mtxtogretmensoyadi;
         private MaterialSkin.Controls.MaterialTextBox mtxtogretmenadi;
         private MaterialSkin.Controls.MaterialTextBox mtxtogretmenid;
+        private MaterialSkin.Controls.MaterialListView mlogretmendetay;
+        private System.Windows.Forms.ColumnHeader mldetayDersAdi;
+        private System.Windows.Forms.ColumnHeader mldetayOgrenciAdi;
+        private System.Windows.Forms.ColumnHeader mldetayOgrenciSoyadi;
+        private System.Windows.Forms.TabPage tpDersSecim;
     }
 }

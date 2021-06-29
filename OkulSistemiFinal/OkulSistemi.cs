@@ -29,6 +29,7 @@ namespace OkulSistemiFinal
             mbdersbtn.Text = veriSayaci("tbl_ders");
             mldetay.Visible = false;
             mlvdersdetay.Visible = false;
+            mlogretmendetay.Visible = false;
             ogrenciMLV();
             dersMLV();
             ogretmenMLV();
@@ -358,6 +359,122 @@ namespace OkulSistemiFinal
             mtxtogretmenid.Text = mlOgretmen.SelectedItems[0].SubItems[0].Text;
             mtxtogretmenadi.Text = mlOgretmen.SelectedItems[0].SubItems[1].Text;
             mtxtogretmensoyadi.Text = mlOgretmen.SelectedItems[0].SubItems[2].Text;
+        }
+
+        private void mbtnogretmentemizle_Click(object sender, EventArgs e)
+        {
+            mtxtogretmenid.Text = "";
+            mtxtogretmenadi.Text = "";
+            mtxtogretmensoyadi.Text = "";
+        }
+
+        private void mbtnekleogretmen_Click(object sender, EventArgs e)
+        {
+            if (mtxtogretmenadi.Text != "" && mtxtogretmensoyadi.Text != "")
+            {
+                Veritabani vt = new Veritabani();
+                SqlCommand cmd = new SqlCommand("insert into tbl_ogretmen (ad,soyad) values(@ad,@soyad)", vt.conAc());
+                cmd.Parameters.AddWithValue("ad", mtxtogretmenadi.Text);
+                cmd.Parameters.AddWithValue("soyad", mtxtogretmensoyadi.Text);
+                int durum = cmd.ExecuteNonQuery();
+                if (durum == 1)
+                {
+                    mlblogretmen.Text = "Başarılı";
+                }
+                else
+                {
+                    mlblogretmen.Text = "Hata";
+                }
+                mlOgretmen.Items.Clear();
+                ogretmenMLV();
+                vt.conKapa();
+            }
+            else
+            {
+                mlblogretmen.Text = "Ad Ve Soyadı Doldurunuz";
+            }
+        }
+
+        private void mbtnsilogretmen_Click(object sender, EventArgs e)
+        {
+            if (mtxtogretmenid.Text != "")
+            {
+                Veritabani vt = new Veritabani();
+                SqlCommand cmd = new SqlCommand("delete from tbl_ogretmen where Id=@id", vt.conAc());
+                cmd.Parameters.AddWithValue("id", mtxtogretmenid.Text);
+                int durum = cmd.ExecuteNonQuery();
+                if (durum == 1)
+                {
+                    mlblogretmen.Text = "Başarılı";
+                }
+                else
+                {
+                    mlblogretmen.Text = "Hata";
+                }
+                mlOgretmen.Items.Clear();
+                ogretmenMLV();
+                vt.conKapa();
+            }
+        }
+
+        private void mbtnogretmenguncelle_Click(object sender, EventArgs e)
+        {
+            if (mtxtogretmenadi.Text != "" && mtxtogretmensoyadi.Text != "")
+            {
+                Veritabani vt = new Veritabani();
+                SqlCommand cmd = new SqlCommand("update tbl_ogretmen set ad=@ad,soyad=@soyad where Id=@id", vt.conAc());
+                cmd.Parameters.AddWithValue("ad", mtxtogretmenadi.Text);
+                cmd.Parameters.AddWithValue("soyad", mtxtogretmensoyadi.Text);
+                cmd.Parameters.AddWithValue("id", mtxtogretmenid.Text);
+                int durum = cmd.ExecuteNonQuery();
+                if (durum == 1)
+                {
+                    mlblogretmen.Text = "Başarılı";
+                }
+                else
+                {
+                    mlblogretmen.Text = "Hata";
+                }
+                mlOgretmen.Items.Clear();
+                ogretmenMLV();
+                vt.conKapa();
+            }
+            else
+            {
+                mlblogretmen.Text = "Tüm Alanları Doldurunuz";
+            }
+        }
+
+        private void mbtnogretmendetay_Click(object sender, EventArgs e)
+        {
+            if (mbtnogretmendetay.Text == "Detay" && mtxtogretmenid.Text != "")
+            {
+                mlogretmendetay.Visible = true;
+                mlOgretmen.Visible = false;
+
+                Veritabani vt = new Veritabani();
+                SqlCommand cmd = new SqlCommand("select tbl_ders.Ad DersAdi,tbl_ogrenci.Ad,tbl_ogrenci.Soyad from tbl_ogrenci inner join tbl_alinanDersler on tbl_alinanDersler.Ogrenci_id=tbl_ogrenci.Id inner join tbl_ders on tbl_ders.Id=tbl_alinanDersler.Ders_id inner join tbl_verilenDersler on tbl_ders.Id=tbl_verilenDersler.Ders_id inner join tbl_ogretmen on tbl_verilenDersler.Ogretmen_id=tbl_ogretmen.Id where tbl_ogretmen.Id=@id", vt.conAc());
+                cmd.Parameters.AddWithValue("id", mtxtogretmenid.Text);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    ListViewItem item2 = new ListViewItem(dr["DersAdi"].ToString());
+                    item2.SubItems.Add(dr["Ad"].ToString());
+                    item2.SubItems.Add(dr["Soyad"].ToString());
+                    mlogretmendetay.Items.Add(item2);
+                }
+                vt.conKapa();
+                mbtnogretmendetay.Text = "X";
+            }
+            else if (mbtnogretmendetay.Text == "X")
+            {
+                mlogretmendetay.Items.Clear();
+                mlogretmendetay.Visible = false;
+                mlOgretmen.Visible = true;
+                mlOgretmen.Items.Clear();
+                ogretmenMLV();
+                mbtnogretmendetay.Text = "Detay";
+            }
         }
     }
 }

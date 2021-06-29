@@ -34,8 +34,8 @@ namespace OkulSistemiFinal
                 if (oku.Read())
                 {
                     this.Hide();
-                    OkulSistemi os = new OkulSistemi();
-                    os.ShowDialog();
+                    OkulSistemi okulsistemi = new OkulSistemi();
+                    okulsistemi.ShowDialog();
                 }
                 else
                 {
