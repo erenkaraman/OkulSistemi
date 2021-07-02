@@ -33,7 +33,8 @@ namespace OkulSistemiFinal
             ogrenciMLV();
             dersMLV();
             ogretmenMLV();
-
+            verilenDerslerMLV();
+            alinanDerslerMLV();
         }
 
         public string veriSayaci(string tabloAdi)
@@ -71,6 +72,7 @@ namespace OkulSistemiFinal
 
         public void ogrenciMLV()
         {
+            mlvogrenci.Items.Clear();
             Veritabani vt = new Veritabani();
             SqlCommand cmd = new SqlCommand("Select * From tbl_ogrenci", vt.conAc());
             SqlDataReader dr = cmd.ExecuteReader();
@@ -82,9 +84,40 @@ namespace OkulSistemiFinal
                 mlvogrenci.Items.Add(item);
             }
             vt.conKapa();
+
+
+            mdpogradisoyadi.Items.Clear();
+            Veritabani vt2 = new Veritabani();
+            SqlCommand cmd2 = new SqlCommand("Select * From tbl_ogrenci", vt2.conAc());
+            SqlDataReader dr2 = cmd2.ExecuteReader();
+            while (dr2.Read())
+            {
+                mdpogradisoyadi.DisplayMember = "Text";
+                mdpogradisoyadi.ValueMember = "Value";
+                mdpogradisoyadi.Items.Add(new { Text = dr2["Ad"].ToString() + " " + dr2["Soyad"].ToString(), Value = dr2["Id"].ToString() });
+            }
+            vt2.conKapa();
+
+            mlvnot.Items.Clear();
+            Veritabani vt22 = new Veritabani();
+            SqlCommand cmd22 = new SqlCommand("select tbl_notlar.Id,tbl_ogrenci.Ad ograd,tbl_ogrenci.Soyad ogrsoyad,tbl_ders.Ad dersad,tbl_notlar.[Not] from tbl_notlar inner join tbl_ogrenci on tbl_notlar.Ogrenci_id=tbl_ogrenci.Id inner join tbl_ders on tbl_notlar.Ders_id=tbl_ders.Id", vt22.conAc());
+            SqlDataReader dr22 = cmd22.ExecuteReader();
+            while (dr22.Read())
+            {
+                ListViewItem item = new ListViewItem(dr22["Id"].ToString());
+                item.SubItems.Add(dr22["ograd"].ToString());
+                item.SubItems.Add(dr22["ogrsoyad"].ToString());
+                item.SubItems.Add(dr22["dersad"].ToString());
+                item.SubItems.Add(dr22["Not"].ToString());
+                mlvnot.Items.Add(item);
+            }
+            vt22.conKapa();
+
+
         }
         public void dersMLV()
         {
+            mlders.Items.Clear();
             Veritabani vt = new Veritabani();
             SqlCommand cmd = new SqlCommand("Select * From tbl_ders", vt.conAc());
             SqlDataReader dr = cmd.ExecuteReader();
@@ -96,8 +129,99 @@ namespace OkulSistemiFinal
             }
             vt.conKapa();
         }
+        public void verilenDerslerMLV()
+        {
+            mlvVerilenDersler.Items.Clear();
+            Veritabani vt = new Veritabani();
+            SqlCommand cmd = new SqlCommand("select tbl_verilenDersler.Id,tbl_ogretmen.Id ogrid,tbl_ogretmen.Ad,tbl_ogretmen.Soyad,tbl_ders.Id dersid,tbl_ders.Ad dersad from tbl_verilenDersler inner join tbl_ders on tbl_verilenDersler.Ders_id=tbl_ders.Id inner join tbl_ogretmen on tbl_verilenDersler.Ogretmen_id=tbl_ogretmen.Id", vt.conAc());
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                ListViewItem item = new ListViewItem(dr["Id"].ToString());
+                item.SubItems.Add(dr["ogrid"].ToString());
+                item.SubItems.Add(dr["Ad"].ToString());
+                item.SubItems.Add(dr["Soyad"].ToString());
+                item.SubItems.Add(dr["dersid"].ToString());
+                item.SubItems.Add(dr["dersad"].ToString());
+                mlvVerilenDersler.Items.Add(item);
+            }
+            vt.conKapa();
+
+            mldpogrvd.Items.Clear();
+            Veritabani vt2 = new Veritabani();
+            SqlCommand cmd2 = new SqlCommand("Select * From tbl_ogretmen", vt2.conAc());
+            SqlDataReader dr2 = cmd2.ExecuteReader();
+            while (dr2.Read())
+            {
+                mldpogrvd.DisplayMember = "Text";
+                mldpogrvd.ValueMember = "Value";
+                mldpogrvd.Items.Add(new { Text = dr2["Ad"].ToString() + " " + dr2["Soyad"].ToString(), Value = dr2["Id"].ToString() });
+            }
+            vt2.conKapa();
+
+
+            mldpdersvd.Items.Clear();
+            Veritabani vt3 = new Veritabani();
+            SqlCommand cmd3 = new SqlCommand("Select * From tbl_ders", vt3.conAc());
+            SqlDataReader dr3 = cmd3.ExecuteReader();
+            while (dr3.Read())
+            {
+                mldpdersvd.DisplayMember = "Text";
+                mldpdersvd.ValueMember = "Value";
+                mldpdersvd.Items.Add(new { Text = dr3["Ad"].ToString(), Value = dr3["Id"].ToString() });
+            }
+            vt2.conKapa();
+
+
+        }
+
+        public void alinanDerslerMLV()
+        {
+            mlvAlinanDersler.Items.Clear();
+            Veritabani vt = new Veritabani();
+            SqlCommand cmd = new SqlCommand("select tbl_alinanDersler.Id,tbl_ogrenci.Id ogrid,tbl_ogrenci.Ad ograd,tbl_ogrenci.Soyad ogrsoyad,tbl_ders.Id dersid,tbl_ders.Ad dersadi from tbl_alinanDersler inner join tbl_ders on tbl_alinanDersler.Ders_id=tbl_ders.Id inner join tbl_ogrenci on tbl_alinanDersler.Ogrenci_id=tbl_ogrenci.Id", vt.conAc());
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                ListViewItem item = new ListViewItem(dr["Id"].ToString());
+                item.SubItems.Add(dr["ogrid"].ToString());
+                item.SubItems.Add(dr["ograd"].ToString());
+                item.SubItems.Add(dr["ogrsoyad"].ToString());
+                item.SubItems.Add(dr["dersid"].ToString());
+                item.SubItems.Add(dr["dersadi"].ToString());
+                mlvAlinanDersler.Items.Add(item);
+            }
+            vt.conKapa();
+
+            mldpograd.Items.Clear();
+            Veritabani vt2 = new Veritabani();
+            SqlCommand cmd2 = new SqlCommand("Select * From tbl_ogrenci", vt2.conAc());
+            SqlDataReader dr2 = cmd2.ExecuteReader();
+            while (dr2.Read())
+            {
+                mldpograd.DisplayMember = "Text";
+                mldpograd.ValueMember = "Value";
+                mldpograd.Items.Add(new { Text = dr2["Ad"].ToString() + " " + dr2["Soyad"].ToString(), Value = dr2["Id"].ToString() });
+            }
+            vt2.conKapa();
+
+            mldpdersad.Items.Clear();
+            Veritabani vt3 = new Veritabani();
+            SqlCommand cmd3 = new SqlCommand("Select * From tbl_ders", vt3.conAc());
+            SqlDataReader dr3 = cmd3.ExecuteReader();
+            while (dr3.Read())
+            {
+                mldpdersad.DisplayMember = "Text";
+                mldpdersad.ValueMember = "Value";
+                mldpdersad.Items.Add(new { Text = dr3["Ad"].ToString(), Value = dr3["Id"].ToString() });
+            }
+            vt2.conKapa();
+
+
+        }
         public void ogretmenMLV()
         {
+            mlOgretmen.Items.Clear();
             Veritabani vt = new Veritabani();
             SqlCommand cmd = new SqlCommand("Select * From tbl_ogretmen", vt.conAc());
             SqlDataReader dr = cmd.ExecuteReader();
@@ -143,13 +267,17 @@ namespace OkulSistemiFinal
                     mlblmessage.Text = "Hata";
                 }
                 mlvogrenci.Items.Clear();
-                ogrenciMLV();
                 vt.conKapa();
             }
             else
             {
                 mlblmessage.Text = "Ad Ve Soyadı Doldurunuz";
             }
+            ogrenciMLV();
+            dersMLV();
+            ogretmenMLV();
+            verilenDerslerMLV();
+            alinanDerslerMLV();
 
         }
 
@@ -170,9 +298,13 @@ namespace OkulSistemiFinal
                     mlblmessage.Text = "Hata";
                 }
                 mlvogrenci.Items.Clear();
-                ogrenciMLV();
                 vt.conKapa();
             }
+            ogrenciMLV();
+            dersMLV();
+            ogretmenMLV();
+            verilenDerslerMLV();
+            alinanDerslerMLV();
         }
 
         private void mbtnguncelle_Click(object sender, EventArgs e)
@@ -194,13 +326,17 @@ namespace OkulSistemiFinal
                     mlblmessage.Text = "Hata";
                 }
                 mlvogrenci.Items.Clear();
-                ogrenciMLV();
                 vt.conKapa();
             }
             else
             {
                 mlblmessage.Text = "Tüm Alanları Doldurunuz";
             }
+            ogrenciMLV();
+            dersMLV();
+            ogretmenMLV();
+            verilenDerslerMLV();
+            alinanDerslerMLV();
         }
 
         private void mbtndetay_Click(object sender, EventArgs e)
@@ -263,13 +399,17 @@ namespace OkulSistemiFinal
                     mlblalertders.Text = "Hata";
                 }
                 mlders.Items.Clear();
-                dersMLV();
                 vt.conKapa();
             }
             else
             {
                 mlblalertders.Text = "Ders Adı Giriniz";
             }
+            ogrenciMLV();
+            dersMLV();
+            ogretmenMLV();
+            verilenDerslerMLV();
+            alinanDerslerMLV();
         }
 
         private void mbtnsilder_Click(object sender, EventArgs e)
@@ -289,9 +429,13 @@ namespace OkulSistemiFinal
                     mlblalertders.Text = "Hata";
                 }
                 mlders.Items.Clear();
-                dersMLV();
                 vt.conKapa();
             }
+            ogrenciMLV();
+            dersMLV();
+            ogretmenMLV();
+            verilenDerslerMLV();
+            alinanDerslerMLV();
         }
 
         private void mbtnguncelleders_Click(object sender, EventArgs e)
@@ -312,13 +456,17 @@ namespace OkulSistemiFinal
                     mlblalertders.Text = "Hata";
                 }
                 mlders.Items.Clear();
-                dersMLV();
                 vt.conKapa();
             }
             else
             {
                 mlblalertders.Text = "Tüm Alanları Doldurunuz";
             }
+            ogrenciMLV();
+            dersMLV();
+            ogretmenMLV();
+            verilenDerslerMLV();
+            alinanDerslerMLV();
         }
 
         private void mbtndetayders_Click(object sender, EventArgs e)
@@ -386,13 +534,17 @@ namespace OkulSistemiFinal
                     mlblogretmen.Text = "Hata";
                 }
                 mlOgretmen.Items.Clear();
-                ogretmenMLV();
                 vt.conKapa();
             }
             else
             {
                 mlblogretmen.Text = "Ad Ve Soyadı Doldurunuz";
             }
+            ogrenciMLV();
+            dersMLV();
+            ogretmenMLV();
+            verilenDerslerMLV();
+            alinanDerslerMLV();
         }
 
         private void mbtnsilogretmen_Click(object sender, EventArgs e)
@@ -412,9 +564,13 @@ namespace OkulSistemiFinal
                     mlblogretmen.Text = "Hata";
                 }
                 mlOgretmen.Items.Clear();
-                ogretmenMLV();
                 vt.conKapa();
             }
+            ogrenciMLV();
+            dersMLV();
+            ogretmenMLV();
+            verilenDerslerMLV();
+            alinanDerslerMLV();
         }
 
         private void mbtnogretmenguncelle_Click(object sender, EventArgs e)
@@ -436,13 +592,17 @@ namespace OkulSistemiFinal
                     mlblogretmen.Text = "Hata";
                 }
                 mlOgretmen.Items.Clear();
-                ogretmenMLV();
                 vt.conKapa();
             }
             else
             {
                 mlblogretmen.Text = "Tüm Alanları Doldurunuz";
             }
+            ogrenciMLV();
+            dersMLV();
+            ogretmenMLV();
+            verilenDerslerMLV();
+            alinanDerslerMLV();
         }
 
         private void mbtnogretmendetay_Click(object sender, EventArgs e)
@@ -475,6 +635,238 @@ namespace OkulSistemiFinal
                 ogretmenMLV();
                 mbtnogretmendetay.Text = "Detay";
             }
+        }
+
+        private void mbtneklevd_Click(object sender, EventArgs e)
+        {
+            dynamic item = mldpogrvd.Items[mldpogrvd.SelectedIndex];
+            var itemValue = item.Value;
+            var itemText = item.Text;
+
+            dynamic item2 = mldpdersvd.Items[mldpdersvd.SelectedIndex];
+            var itemValue2 = item2.Value;
+            var itemText2 = item2.Text;
+
+            Veritabani vt = new Veritabani();
+            SqlCommand cmd = new SqlCommand("insert into tbl_verilenDersler (Ogretmen_id,Ders_id) values(@Ogretmen_id,@Ders_id)", vt.conAc());
+            cmd.Parameters.AddWithValue("Ogretmen_id", Convert.ToInt32(itemValue));
+            cmd.Parameters.AddWithValue("Ders_id", Convert.ToInt32(itemValue2));
+            int durum = cmd.ExecuteNonQuery();
+            if (durum == 1)
+            {
+                lblderssecim.Text = "Başarılı";
+            }
+            else
+            {
+                lblderssecim.Text = "Hata";
+            }
+            mlvVerilenDersler.Items.Clear();
+            vt.conKapa();
+
+            ogrenciMLV();
+            dersMLV();
+            ogretmenMLV();
+            verilenDerslerMLV();
+            alinanDerslerMLV();
+
+        }
+
+        private void mlvVerilenDersler_MouseClick(object sender, MouseEventArgs e)
+        {
+            mtxtidverilenders.Text = mlvVerilenDersler.SelectedItems[0].SubItems[0].Text;
+        }
+
+        private void mbtnsilvd_Click(object sender, EventArgs e)
+        {
+            if (mtxtidverilenders.Text != "")
+            {
+                Veritabani vt = new Veritabani();
+                SqlCommand cmd = new SqlCommand("delete from tbl_verilenDersler where Id=@id", vt.conAc());
+                cmd.Parameters.AddWithValue("id", mtxtidverilenders.Text);
+                int durum = cmd.ExecuteNonQuery();
+                if (durum == 1)
+                {
+                    lblderssecim.Text = "Başarılı";
+                }
+                else
+                {
+                    lblderssecim.Text = "Hata";
+                }
+                mlvVerilenDersler.Items.Clear();
+                vt.conKapa();
+            }
+            ogrenciMLV();
+            dersMLV();
+            ogretmenMLV();
+            verilenDerslerMLV();
+            alinanDerslerMLV();
+        }
+
+        private void mlvAlinanDersler_MouseClick(object sender, MouseEventArgs e)
+        {
+            mtxtidad.Text = mlvAlinanDersler.SelectedItems[0].SubItems[0].Text;
+        }
+
+        private void mbtneklead_Click(object sender, EventArgs e)
+        {
+            dynamic item = mldpograd.Items[mldpograd.SelectedIndex];
+            var itemValue = item.Value;
+            var itemText = item.Text;
+
+            dynamic item2 = mldpdersad.Items[mldpdersad.SelectedIndex];
+            var itemValue2 = item2.Value;
+            var itemText2 = item2.Text;
+
+            Veritabani vt = new Veritabani();
+            SqlCommand cmd = new SqlCommand("insert into tbl_alinanDersler (Ogrenci_id,Ders_id) values(@Ogrenci_id,@Ders_id)", vt.conAc());
+            cmd.Parameters.AddWithValue("Ogrenci_id", Convert.ToInt32(itemValue));
+            cmd.Parameters.AddWithValue("Ders_id", Convert.ToInt32(itemValue2));
+            int durum = cmd.ExecuteNonQuery();
+            if (durum == 1)
+            {
+                lblderssecimad.Text = "Başarılı";
+            }
+            else
+            {
+                lblderssecimad.Text = "Hata";
+            }
+            mlvAlinanDersler.Items.Clear();
+            vt.conKapa();
+
+            ogrenciMLV();
+            dersMLV();
+            ogretmenMLV();
+            verilenDerslerMLV();
+            alinanDerslerMLV();
+
+        }
+
+        private void mbtnsilad_Click(object sender, EventArgs e)
+        {
+            if (mtxtidad.Text != "")
+            {
+                Veritabani vt = new Veritabani();
+                SqlCommand cmd = new SqlCommand("delete from tbl_alinanDersler where Id=@id", vt.conAc());
+                cmd.Parameters.AddWithValue("id", mtxtidad.Text);
+                int durum = cmd.ExecuteNonQuery();
+                if (durum == 1)
+                {
+                    lblderssecimad.Text = "Başarılı";
+                }
+                else
+                {
+                    lblderssecimad.Text = "Hata";
+                }
+                mlvAlinanDersler.Items.Clear();
+                vt.conKapa();
+            }
+            ogrenciMLV();
+            dersMLV();
+            ogretmenMLV();
+            verilenDerslerMLV();
+            alinanDerslerMLV();
+        }
+
+        private void mlvnot_MouseClick(object sender, MouseEventArgs e)
+        {
+            mtxtidnot.Text = mlvnot.SelectedItems[0].SubItems[0].Text;
+            mtxtnotogre.Text = mlvnot.SelectedItems[0].SubItems[4].Text;
+        }
+
+        private void mbtnsilogrnot_Click(object sender, EventArgs e)
+        {
+
+            if (mtxtidnot.Text != "")
+            {
+                Veritabani vt = new Veritabani();
+                SqlCommand cmd = new SqlCommand("delete from tbl_notlar where Id=@id", vt.conAc());
+                cmd.Parameters.AddWithValue("id", mtxtidnot.Text);
+                int durum = cmd.ExecuteNonQuery();
+                if (durum == 1)
+                {
+                    mlblogrnot.Text = "Başarılı";
+                }
+                else
+                {
+                    mlblogrnot.Text = "Hata";
+                }
+                mlvnot.Items.Clear();
+                vt.conKapa();
+            }
+            ogrenciMLV();
+            dersMLV();
+            ogretmenMLV();
+            verilenDerslerMLV();
+            alinanDerslerMLV();
+        }
+
+        private void mbtnekleogrnot_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dynamic item = mdpdersogr.Items[mdpdersogr.SelectedIndex];
+                var itemValue = item.Value;
+                var itemText = item.Text;
+
+                dynamic item2 = mdpogradisoyadi.Items[mdpogradisoyadi.SelectedIndex];
+                var itemValue2 = item2.Value;
+                var itemText2 = item2.Text;
+
+
+                Veritabani vt = new Veritabani();
+                SqlCommand cmd = new SqlCommand("insert into tbl_notlar (Ogrenci_id,Ders_id,[Not]) values(@Ogrenci_id,@Ders_id,@Not)", vt.conAc());
+                cmd.Parameters.AddWithValue("Ogrenci_id", Convert.ToInt32(itemValue2));
+                cmd.Parameters.AddWithValue("Ders_id", Convert.ToInt32(itemValue));
+                cmd.Parameters.AddWithValue("Not", mtxtnotogre.Text);
+                int durum = cmd.ExecuteNonQuery();
+                if (durum == 1)
+                {
+                    mlblogrnot.Text = "Başarılı";
+                }
+                else
+                {
+                    mlblogrnot.Text = "Hata";
+                }
+                mlvnot.Items.Clear();
+                vt.conKapa();
+
+                ogrenciMLV();
+                dersMLV();
+                ogretmenMLV();
+                verilenDerslerMLV();
+                alinanDerslerMLV();
+            }
+            catch (Exception)
+            {
+
+                mlblogrnot.Text = "Hata";
+            }
+
+        }
+
+        private void mdpogradisoyadi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            dynamic item2 = mdpogradisoyadi.Items[mdpogradisoyadi.SelectedIndex];
+            var itemValue2 = item2.Value;
+            var itemText2 = item2.Text;
+
+            if (true)
+            {
+                mdpdersogr.Items.Clear();
+                Veritabani vt3 = new Veritabani();
+                SqlCommand cmd3 = new SqlCommand("select tbl_ders.Id dersid,tbl_ders.Ad dersadi from tbl_alinanDersler inner join tbl_ders on tbl_alinanDersler.Ders_id=tbl_ders.Id inner join tbl_ogrenci on tbl_alinanDersler.Ogrenci_id=tbl_ogrenci.Id where tbl_ogrenci.Id=@id", vt3.conAc());
+                cmd3.Parameters.AddWithValue("id", itemValue2);
+                SqlDataReader dr3 = cmd3.ExecuteReader();
+                while (dr3.Read())
+                {
+                    mdpdersogr.DisplayMember = "Text";
+                    mdpdersogr.ValueMember = "Value";
+                    mdpdersogr.Items.Add(new { Text = dr3["dersadi"].ToString(), Value = dr3["dersid"].ToString() });
+                }
+                vt3.conKapa();
+            }
+
         }
     }
 }

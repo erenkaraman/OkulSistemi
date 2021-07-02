@@ -30,6 +30,7 @@ namespace OkulSistemiFinal
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.ColumnHeader cladogrid;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OkulSistemi));
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tpAnasayfa = new System.Windows.Forms.TabPage();
@@ -43,6 +44,19 @@ namespace OkulSistemiFinal
             this.mbogrencibtn = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.tpÖğrenciler = new System.Windows.Forms.TabPage();
+            this.mdpdersogr = new MaterialSkin.Controls.MaterialComboBox();
+            this.mtxtnotogre = new MaterialSkin.Controls.MaterialTextBox();
+            this.mlvnot = new MaterialSkin.Controls.MaterialListView();
+            this.clidogrnot = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clogadi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clogrsoyadi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cldersadi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clogrnot = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.mlblogrnot = new MaterialSkin.Controls.MaterialLabel();
+            this.mbtnsilogrnot = new MaterialSkin.Controls.MaterialButton();
+            this.mbtnekleogrnot = new MaterialSkin.Controls.MaterialButton();
+            this.mtxtidnot = new MaterialSkin.Controls.MaterialTextBox();
+            this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
             this.mldetay = new MaterialSkin.Controls.MaterialListView();
             this.lvDers = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lvNot = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -97,8 +111,37 @@ namespace OkulSistemiFinal
             this.mtxtogretmenadi = new MaterialSkin.Controls.MaterialTextBox();
             this.mtxtogretmenid = new MaterialSkin.Controls.MaterialTextBox();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tpDersSecim = new System.Windows.Forms.TabPage();
+            this.lblderssecimad = new MaterialSkin.Controls.MaterialLabel();
+            this.mldpdersad = new MaterialSkin.Controls.MaterialComboBox();
+            this.mldpograd = new MaterialSkin.Controls.MaterialComboBox();
+            this.mbtnsilad = new MaterialSkin.Controls.MaterialButton();
+            this.mbtneklead = new MaterialSkin.Controls.MaterialButton();
+            this.mtxtidad = new MaterialSkin.Controls.MaterialTextBox();
+            this.mlvAlinanDersler = new MaterialSkin.Controls.MaterialListView();
+            this.cladid = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cladogradi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cladogrencisoyadi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.claddersid = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.claddersadi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
+            this.mldpdersvd = new MaterialSkin.Controls.MaterialComboBox();
+            this.mldpogrvd = new MaterialSkin.Controls.MaterialComboBox();
+            this.lblderssecim = new MaterialSkin.Controls.MaterialLabel();
+            this.mbtnsilvd = new MaterialSkin.Controls.MaterialButton();
+            this.mbtneklevd = new MaterialSkin.Controls.MaterialButton();
+            this.mtxtidverilenders = new MaterialSkin.Controls.MaterialTextBox();
+            this.mlvVerilenDersler = new MaterialSkin.Controls.MaterialListView();
+            this.cvdid = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cvdOgretmenID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cvdOgretmenAdı = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cvdOgretmenSoyadAdı = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cvdDersID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cvdDersAdı = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.mdpogradisoyadi = new MaterialSkin.Controls.MaterialComboBox();
+            cladogrid = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialTabControl1.SuspendLayout();
             this.tpAnasayfa.SuspendLayout();
             this.materialCard3.SuspendLayout();
@@ -107,7 +150,12 @@ namespace OkulSistemiFinal
             this.tpÖğrenciler.SuspendLayout();
             this.tpDersler.SuspendLayout();
             this.tpÖğretmen.SuspendLayout();
+            this.tpDersSecim.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // cladogrid
+            // 
+            cladogrid.Text = "Öğrenci ID";
             // 
             // materialTabControl1
             // 
@@ -124,7 +172,7 @@ namespace OkulSistemiFinal
             this.materialTabControl1.Multiline = true;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(794, 383);
+            this.materialTabControl1.Size = new System.Drawing.Size(794, 733);
             this.materialTabControl1.TabIndex = 0;
             // 
             // tpAnasayfa
@@ -137,7 +185,7 @@ namespace OkulSistemiFinal
             this.tpAnasayfa.Location = new System.Drawing.Point(4, 39);
             this.tpAnasayfa.Name = "tpAnasayfa";
             this.tpAnasayfa.Padding = new System.Windows.Forms.Padding(3);
-            this.tpAnasayfa.Size = new System.Drawing.Size(786, 340);
+            this.tpAnasayfa.Size = new System.Drawing.Size(786, 690);
             this.tpAnasayfa.TabIndex = 0;
             this.tpAnasayfa.Text = "Anasayfa";
             // 
@@ -279,6 +327,15 @@ namespace OkulSistemiFinal
             // tpÖğrenciler
             // 
             this.tpÖğrenciler.BackColor = System.Drawing.Color.White;
+            this.tpÖğrenciler.Controls.Add(this.mdpogradisoyadi);
+            this.tpÖğrenciler.Controls.Add(this.mdpdersogr);
+            this.tpÖğrenciler.Controls.Add(this.mtxtnotogre);
+            this.tpÖğrenciler.Controls.Add(this.mlvnot);
+            this.tpÖğrenciler.Controls.Add(this.mlblogrnot);
+            this.tpÖğrenciler.Controls.Add(this.mbtnsilogrnot);
+            this.tpÖğrenciler.Controls.Add(this.mbtnekleogrnot);
+            this.tpÖğrenciler.Controls.Add(this.mtxtidnot);
+            this.tpÖğrenciler.Controls.Add(this.materialLabel10);
             this.tpÖğrenciler.Controls.Add(this.mldetay);
             this.tpÖğrenciler.Controls.Add(this.mbtndetay);
             this.tpÖğrenciler.Controls.Add(this.mlblmessage);
@@ -296,9 +353,176 @@ namespace OkulSistemiFinal
             this.tpÖğrenciler.Location = new System.Drawing.Point(4, 39);
             this.tpÖğrenciler.Name = "tpÖğrenciler";
             this.tpÖğrenciler.Padding = new System.Windows.Forms.Padding(3);
-            this.tpÖğrenciler.Size = new System.Drawing.Size(786, 340);
+            this.tpÖğrenciler.Size = new System.Drawing.Size(786, 690);
             this.tpÖğrenciler.TabIndex = 1;
             this.tpÖğrenciler.Text = "Öğrenciler";
+            // 
+            // mdpdersogr
+            // 
+            this.mdpdersogr.AutoResize = false;
+            this.mdpdersogr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.mdpdersogr.Depth = 0;
+            this.mdpdersogr.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.mdpdersogr.DropDownHeight = 174;
+            this.mdpdersogr.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.mdpdersogr.DropDownWidth = 121;
+            this.mdpdersogr.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.mdpdersogr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mdpdersogr.FormattingEnabled = true;
+            this.mdpdersogr.IntegralHeight = false;
+            this.mdpdersogr.ItemHeight = 43;
+            this.mdpdersogr.Location = new System.Drawing.Point(603, 525);
+            this.mdpdersogr.MaxDropDownItems = 4;
+            this.mdpdersogr.MouseState = MaterialSkin.MouseState.OUT;
+            this.mdpdersogr.Name = "mdpdersogr";
+            this.mdpdersogr.Size = new System.Drawing.Size(157, 49);
+            this.mdpdersogr.StartIndex = 0;
+            this.mdpdersogr.TabIndex = 25;
+            // 
+            // mtxtnotogre
+            // 
+            this.mtxtnotogre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.mtxtnotogre.Depth = 0;
+            this.mtxtnotogre.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.mtxtnotogre.LeadingIcon = null;
+            this.mtxtnotogre.Location = new System.Drawing.Point(603, 582);
+            this.mtxtnotogre.MaxLength = 50;
+            this.mtxtnotogre.MouseState = MaterialSkin.MouseState.OUT;
+            this.mtxtnotogre.Multiline = false;
+            this.mtxtnotogre.Name = "mtxtnotogre";
+            this.mtxtnotogre.Size = new System.Drawing.Size(157, 50);
+            this.mtxtnotogre.TabIndex = 23;
+            this.mtxtnotogre.Text = "";
+            this.mtxtnotogre.TrailingIcon = null;
+            // 
+            // mlvnot
+            // 
+            this.mlvnot.AutoSizeTable = false;
+            this.mlvnot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.mlvnot.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.mlvnot.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.clidogrnot,
+            this.clogadi,
+            this.clogrsoyadi,
+            this.cldersadi,
+            this.clogrnot});
+            this.mlvnot.Depth = 0;
+            this.mlvnot.FullRowSelect = true;
+            this.mlvnot.HideSelection = false;
+            this.mlvnot.Location = new System.Drawing.Point(35, 416);
+            this.mlvnot.MinimumSize = new System.Drawing.Size(200, 100);
+            this.mlvnot.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.mlvnot.MouseState = MaterialSkin.MouseState.OUT;
+            this.mlvnot.Name = "mlvnot";
+            this.mlvnot.OwnerDraw = true;
+            this.mlvnot.Size = new System.Drawing.Size(560, 210);
+            this.mlvnot.TabIndex = 22;
+            this.mlvnot.UseCompatibleStateImageBehavior = false;
+            this.mlvnot.View = System.Windows.Forms.View.Details;
+            this.mlvnot.MouseClick += new System.Windows.Forms.MouseEventHandler(this.mlvnot_MouseClick);
+            // 
+            // clidogrnot
+            // 
+            this.clidogrnot.Text = "ID";
+            // 
+            // clogadi
+            // 
+            this.clogadi.Text = "Öğrenci Adı";
+            this.clogadi.Width = 150;
+            // 
+            // clogrsoyadi
+            // 
+            this.clogrsoyadi.Text = "Öğrenci Soyadi";
+            this.clogrsoyadi.Width = 150;
+            // 
+            // cldersadi
+            // 
+            this.cldersadi.Text = "Ders Adı";
+            this.cldersadi.Width = 100;
+            // 
+            // clogrnot
+            // 
+            this.clogrnot.Text = "Not";
+            this.clogrnot.Width = 100;
+            // 
+            // mlblogrnot
+            // 
+            this.mlblogrnot.AutoSize = true;
+            this.mlblogrnot.Depth = 0;
+            this.mlblogrnot.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.mlblogrnot.Location = new System.Drawing.Point(32, 646);
+            this.mlblogrnot.MouseState = MaterialSkin.MouseState.HOVER;
+            this.mlblogrnot.Name = "mlblogrnot";
+            this.mlblogrnot.Size = new System.Drawing.Size(40, 19);
+            this.mlblogrnot.TabIndex = 20;
+            this.mlblogrnot.Text = "Label";
+            // 
+            // mbtnsilogrnot
+            // 
+            this.mbtnsilogrnot.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.mbtnsilogrnot.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.mbtnsilogrnot.Depth = 0;
+            this.mbtnsilogrnot.HighEmphasis = true;
+            this.mbtnsilogrnot.Icon = null;
+            this.mbtnsilogrnot.Location = new System.Drawing.Point(674, 641);
+            this.mbtnsilogrnot.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.mbtnsilogrnot.MouseState = MaterialSkin.MouseState.HOVER;
+            this.mbtnsilogrnot.Name = "mbtnsilogrnot";
+            this.mbtnsilogrnot.Size = new System.Drawing.Size(64, 36);
+            this.mbtnsilogrnot.TabIndex = 17;
+            this.mbtnsilogrnot.Text = "Sil";
+            this.mbtnsilogrnot.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.mbtnsilogrnot.UseAccentColor = false;
+            this.mbtnsilogrnot.UseVisualStyleBackColor = true;
+            this.mbtnsilogrnot.Click += new System.EventHandler(this.mbtnsilogrnot_Click);
+            // 
+            // mbtnekleogrnot
+            // 
+            this.mbtnekleogrnot.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.mbtnekleogrnot.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.mbtnekleogrnot.Depth = 0;
+            this.mbtnekleogrnot.HighEmphasis = true;
+            this.mbtnekleogrnot.Icon = null;
+            this.mbtnekleogrnot.Location = new System.Drawing.Point(602, 641);
+            this.mbtnekleogrnot.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.mbtnekleogrnot.MouseState = MaterialSkin.MouseState.HOVER;
+            this.mbtnekleogrnot.Name = "mbtnekleogrnot";
+            this.mbtnekleogrnot.Size = new System.Drawing.Size(64, 36);
+            this.mbtnekleogrnot.TabIndex = 16;
+            this.mbtnekleogrnot.Text = "Ekle";
+            this.mbtnekleogrnot.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.mbtnekleogrnot.UseAccentColor = false;
+            this.mbtnekleogrnot.UseVisualStyleBackColor = true;
+            this.mbtnekleogrnot.Click += new System.EventHandler(this.mbtnekleogrnot_Click);
+            // 
+            // mtxtidnot
+            // 
+            this.mtxtidnot.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.mtxtidnot.Depth = 0;
+            this.mtxtidnot.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.mtxtidnot.LeadingIcon = null;
+            this.mtxtidnot.Location = new System.Drawing.Point(603, 413);
+            this.mtxtidnot.MaxLength = 50;
+            this.mtxtidnot.MouseState = MaterialSkin.MouseState.OUT;
+            this.mtxtidnot.Multiline = false;
+            this.mtxtidnot.Name = "mtxtidnot";
+            this.mtxtidnot.ReadOnly = true;
+            this.mtxtidnot.Size = new System.Drawing.Size(157, 50);
+            this.mtxtidnot.TabIndex = 13;
+            this.mtxtidnot.Text = "";
+            this.mtxtidnot.TrailingIcon = null;
+            // 
+            // materialLabel10
+            // 
+            this.materialLabel10.AutoSize = true;
+            this.materialLabel10.Depth = 0;
+            this.materialLabel10.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel10.Location = new System.Drawing.Point(32, 373);
+            this.materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel10.Name = "materialLabel10";
+            this.materialLabel10.Size = new System.Drawing.Size(44, 19);
+            this.materialLabel10.TabIndex = 12;
+            this.materialLabel10.Text = "Notlar";
             // 
             // mldetay
             // 
@@ -555,7 +779,7 @@ namespace OkulSistemiFinal
             this.tpDersler.ImageKey = "open-book.png";
             this.tpDersler.Location = new System.Drawing.Point(4, 39);
             this.tpDersler.Name = "tpDersler";
-            this.tpDersler.Size = new System.Drawing.Size(786, 340);
+            this.tpDersler.Size = new System.Drawing.Size(786, 690);
             this.tpDersler.TabIndex = 2;
             this.tpDersler.Text = "Dersler";
             // 
@@ -805,7 +1029,7 @@ namespace OkulSistemiFinal
             this.tpÖğretmen.ImageKey = "user.png";
             this.tpÖğretmen.Location = new System.Drawing.Point(4, 39);
             this.tpÖğretmen.Name = "tpÖğretmen";
-            this.tpÖğretmen.Size = new System.Drawing.Size(786, 340);
+            this.tpÖğretmen.Size = new System.Drawing.Size(786, 690);
             this.tpÖğretmen.TabIndex = 3;
             this.tpÖğretmen.Text = "Öğretmen";
             // 
@@ -1053,6 +1277,380 @@ namespace OkulSistemiFinal
             this.materialLabel6.TabIndex = 0;
             this.materialLabel6.Text = "Öğretmenler";
             // 
+            // tpDersSecim
+            // 
+            this.tpDersSecim.BackColor = System.Drawing.Color.White;
+            this.tpDersSecim.Controls.Add(this.lblderssecimad);
+            this.tpDersSecim.Controls.Add(this.mldpdersad);
+            this.tpDersSecim.Controls.Add(this.mldpograd);
+            this.tpDersSecim.Controls.Add(this.mbtnsilad);
+            this.tpDersSecim.Controls.Add(this.mbtneklead);
+            this.tpDersSecim.Controls.Add(this.mtxtidad);
+            this.tpDersSecim.Controls.Add(this.mlvAlinanDersler);
+            this.tpDersSecim.Controls.Add(this.materialLabel8);
+            this.tpDersSecim.Controls.Add(this.mldpdersvd);
+            this.tpDersSecim.Controls.Add(this.mldpogrvd);
+            this.tpDersSecim.Controls.Add(this.lblderssecim);
+            this.tpDersSecim.Controls.Add(this.mbtnsilvd);
+            this.tpDersSecim.Controls.Add(this.mbtneklevd);
+            this.tpDersSecim.Controls.Add(this.mtxtidverilenders);
+            this.tpDersSecim.Controls.Add(this.mlvVerilenDersler);
+            this.tpDersSecim.Controls.Add(this.materialLabel7);
+            this.tpDersSecim.ImageKey = "exchange.png";
+            this.tpDersSecim.Location = new System.Drawing.Point(4, 39);
+            this.tpDersSecim.Name = "tpDersSecim";
+            this.tpDersSecim.Size = new System.Drawing.Size(786, 690);
+            this.tpDersSecim.TabIndex = 4;
+            this.tpDersSecim.Text = "Ders Seçimi";
+            // 
+            // lblderssecimad
+            // 
+            this.lblderssecimad.AutoSize = true;
+            this.lblderssecimad.Depth = 0;
+            this.lblderssecimad.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lblderssecimad.Location = new System.Drawing.Point(151, 258);
+            this.lblderssecimad.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblderssecimad.Name = "lblderssecimad";
+            this.lblderssecimad.Size = new System.Drawing.Size(1, 0);
+            this.lblderssecimad.TabIndex = 38;
+            // 
+            // mldpdersad
+            // 
+            this.mldpdersad.AutoResize = false;
+            this.mldpdersad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.mldpdersad.Depth = 0;
+            this.mldpdersad.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.mldpdersad.DropDownHeight = 174;
+            this.mldpdersad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.mldpdersad.DropDownWidth = 121;
+            this.mldpdersad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.mldpdersad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mldpdersad.FormattingEnabled = true;
+            this.mldpdersad.IntegralHeight = false;
+            this.mldpdersad.ItemHeight = 43;
+            this.mldpdersad.Location = new System.Drawing.Point(615, 353);
+            this.mldpdersad.MaxDropDownItems = 4;
+            this.mldpdersad.MouseState = MaterialSkin.MouseState.OUT;
+            this.mldpdersad.Name = "mldpdersad";
+            this.mldpdersad.Size = new System.Drawing.Size(157, 49);
+            this.mldpdersad.StartIndex = 0;
+            this.mldpdersad.TabIndex = 37;
+            // 
+            // mldpograd
+            // 
+            this.mldpograd.AutoResize = false;
+            this.mldpograd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.mldpograd.Depth = 0;
+            this.mldpograd.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.mldpograd.DropDownHeight = 174;
+            this.mldpograd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.mldpograd.DropDownWidth = 121;
+            this.mldpograd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.mldpograd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mldpograd.FormattingEnabled = true;
+            this.mldpograd.IntegralHeight = false;
+            this.mldpograd.ItemHeight = 43;
+            this.mldpograd.Location = new System.Drawing.Point(615, 296);
+            this.mldpograd.MaxDropDownItems = 4;
+            this.mldpograd.MouseState = MaterialSkin.MouseState.OUT;
+            this.mldpograd.Name = "mldpograd";
+            this.mldpograd.Size = new System.Drawing.Size(157, 49);
+            this.mldpograd.StartIndex = 0;
+            this.mldpograd.TabIndex = 36;
+            // 
+            // mbtnsilad
+            // 
+            this.mbtnsilad.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.mbtnsilad.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.mbtnsilad.Depth = 0;
+            this.mbtnsilad.HighEmphasis = true;
+            this.mbtnsilad.Icon = null;
+            this.mbtnsilad.Location = new System.Drawing.Point(686, 411);
+            this.mbtnsilad.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.mbtnsilad.MouseState = MaterialSkin.MouseState.HOVER;
+            this.mbtnsilad.Name = "mbtnsilad";
+            this.mbtnsilad.Size = new System.Drawing.Size(64, 36);
+            this.mbtnsilad.TabIndex = 35;
+            this.mbtnsilad.Text = "Sil";
+            this.mbtnsilad.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.mbtnsilad.UseAccentColor = false;
+            this.mbtnsilad.UseVisualStyleBackColor = true;
+            this.mbtnsilad.Click += new System.EventHandler(this.mbtnsilad_Click);
+            // 
+            // mbtneklead
+            // 
+            this.mbtneklead.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.mbtneklead.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.mbtneklead.Depth = 0;
+            this.mbtneklead.HighEmphasis = true;
+            this.mbtneklead.Icon = null;
+            this.mbtneklead.Location = new System.Drawing.Point(614, 411);
+            this.mbtneklead.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.mbtneklead.MouseState = MaterialSkin.MouseState.HOVER;
+            this.mbtneklead.Name = "mbtneklead";
+            this.mbtneklead.Size = new System.Drawing.Size(64, 36);
+            this.mbtneklead.TabIndex = 34;
+            this.mbtneklead.Text = "Ekle";
+            this.mbtneklead.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.mbtneklead.UseAccentColor = false;
+            this.mbtneklead.UseVisualStyleBackColor = true;
+            this.mbtneklead.Click += new System.EventHandler(this.mbtneklead_Click);
+            // 
+            // mtxtidad
+            // 
+            this.mtxtidad.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.mtxtidad.Depth = 0;
+            this.mtxtidad.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.mtxtidad.LeadingIcon = null;
+            this.mtxtidad.Location = new System.Drawing.Point(615, 240);
+            this.mtxtidad.MaxLength = 50;
+            this.mtxtidad.MouseState = MaterialSkin.MouseState.OUT;
+            this.mtxtidad.Multiline = false;
+            this.mtxtidad.Name = "mtxtidad";
+            this.mtxtidad.ReadOnly = true;
+            this.mtxtidad.Size = new System.Drawing.Size(157, 50);
+            this.mtxtidad.TabIndex = 33;
+            this.mtxtidad.Text = "";
+            this.mtxtidad.TrailingIcon = null;
+            // 
+            // mlvAlinanDersler
+            // 
+            this.mlvAlinanDersler.AutoSizeTable = false;
+            this.mlvAlinanDersler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.mlvAlinanDersler.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.mlvAlinanDersler.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.cladid,
+            cladogrid,
+            this.cladogradi,
+            this.cladogrencisoyadi,
+            this.claddersid,
+            this.claddersadi});
+            this.mlvAlinanDersler.Depth = 0;
+            this.mlvAlinanDersler.FullRowSelect = true;
+            this.mlvAlinanDersler.HideSelection = false;
+            this.mlvAlinanDersler.Location = new System.Drawing.Point(25, 291);
+            this.mlvAlinanDersler.MinimumSize = new System.Drawing.Size(200, 100);
+            this.mlvAlinanDersler.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.mlvAlinanDersler.MouseState = MaterialSkin.MouseState.OUT;
+            this.mlvAlinanDersler.Name = "mlvAlinanDersler";
+            this.mlvAlinanDersler.OwnerDraw = true;
+            this.mlvAlinanDersler.Size = new System.Drawing.Size(560, 156);
+            this.mlvAlinanDersler.TabIndex = 32;
+            this.mlvAlinanDersler.UseCompatibleStateImageBehavior = false;
+            this.mlvAlinanDersler.View = System.Windows.Forms.View.Details;
+            this.mlvAlinanDersler.MouseClick += new System.Windows.Forms.MouseEventHandler(this.mlvAlinanDersler_MouseClick);
+            // 
+            // cladid
+            // 
+            this.cladid.Text = "ID";
+            // 
+            // cladogradi
+            // 
+            this.cladogradi.Text = "Öğrenci Adı";
+            this.cladogradi.Width = 200;
+            // 
+            // cladogrencisoyadi
+            // 
+            this.cladogrencisoyadi.Text = "Öğrenci Soyadı";
+            this.cladogrencisoyadi.Width = 200;
+            // 
+            // claddersid
+            // 
+            this.claddersid.Text = "Ders Id";
+            // 
+            // claddersadi
+            // 
+            this.claddersadi.Text = "Ders Adı";
+            this.claddersadi.Width = 200;
+            // 
+            // materialLabel8
+            // 
+            this.materialLabel8.AutoSize = true;
+            this.materialLabel8.Depth = 0;
+            this.materialLabel8.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel8.Location = new System.Drawing.Point(32, 258);
+            this.materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel8.Name = "materialLabel8";
+            this.materialLabel8.Size = new System.Drawing.Size(99, 19);
+            this.materialLabel8.TabIndex = 31;
+            this.materialLabel8.Text = "Alınan Dersler";
+            // 
+            // mldpdersvd
+            // 
+            this.mldpdersvd.AutoResize = false;
+            this.mldpdersvd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.mldpdersvd.Depth = 0;
+            this.mldpdersvd.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.mldpdersvd.DropDownHeight = 174;
+            this.mldpdersvd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.mldpdersvd.DropDownWidth = 121;
+            this.mldpdersvd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.mldpdersvd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mldpdersvd.FormattingEnabled = true;
+            this.mldpdersvd.IntegralHeight = false;
+            this.mldpdersvd.ItemHeight = 43;
+            this.mldpdersvd.Location = new System.Drawing.Point(615, 127);
+            this.mldpdersvd.MaxDropDownItems = 4;
+            this.mldpdersvd.MouseState = MaterialSkin.MouseState.OUT;
+            this.mldpdersvd.Name = "mldpdersvd";
+            this.mldpdersvd.Size = new System.Drawing.Size(157, 49);
+            this.mldpdersvd.StartIndex = 0;
+            this.mldpdersvd.TabIndex = 30;
+            // 
+            // mldpogrvd
+            // 
+            this.mldpogrvd.AutoResize = false;
+            this.mldpogrvd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.mldpogrvd.Depth = 0;
+            this.mldpogrvd.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.mldpogrvd.DropDownHeight = 174;
+            this.mldpogrvd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.mldpogrvd.DropDownWidth = 121;
+            this.mldpogrvd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.mldpogrvd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mldpogrvd.FormattingEnabled = true;
+            this.mldpogrvd.IntegralHeight = false;
+            this.mldpogrvd.ItemHeight = 43;
+            this.mldpogrvd.Location = new System.Drawing.Point(615, 70);
+            this.mldpogrvd.MaxDropDownItems = 4;
+            this.mldpogrvd.MouseState = MaterialSkin.MouseState.OUT;
+            this.mldpogrvd.Name = "mldpogrvd";
+            this.mldpogrvd.Size = new System.Drawing.Size(157, 49);
+            this.mldpogrvd.StartIndex = 0;
+            this.mldpogrvd.TabIndex = 29;
+            // 
+            // lblderssecim
+            // 
+            this.lblderssecim.AutoSize = true;
+            this.lblderssecim.Depth = 0;
+            this.lblderssecim.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lblderssecim.Location = new System.Drawing.Point(169, 32);
+            this.lblderssecim.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblderssecim.Name = "lblderssecim";
+            this.lblderssecim.Size = new System.Drawing.Size(1, 0);
+            this.lblderssecim.TabIndex = 28;
+            // 
+            // mbtnsilvd
+            // 
+            this.mbtnsilvd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.mbtnsilvd.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.mbtnsilvd.Depth = 0;
+            this.mbtnsilvd.HighEmphasis = true;
+            this.mbtnsilvd.Icon = null;
+            this.mbtnsilvd.Location = new System.Drawing.Point(686, 185);
+            this.mbtnsilvd.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.mbtnsilvd.MouseState = MaterialSkin.MouseState.HOVER;
+            this.mbtnsilvd.Name = "mbtnsilvd";
+            this.mbtnsilvd.Size = new System.Drawing.Size(64, 36);
+            this.mbtnsilvd.TabIndex = 25;
+            this.mbtnsilvd.Text = "Sil";
+            this.mbtnsilvd.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.mbtnsilvd.UseAccentColor = false;
+            this.mbtnsilvd.UseVisualStyleBackColor = true;
+            this.mbtnsilvd.Click += new System.EventHandler(this.mbtnsilvd_Click);
+            // 
+            // mbtneklevd
+            // 
+            this.mbtneklevd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.mbtneklevd.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.mbtneklevd.Depth = 0;
+            this.mbtneklevd.HighEmphasis = true;
+            this.mbtneklevd.Icon = null;
+            this.mbtneklevd.Location = new System.Drawing.Point(614, 185);
+            this.mbtneklevd.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.mbtneklevd.MouseState = MaterialSkin.MouseState.HOVER;
+            this.mbtneklevd.Name = "mbtneklevd";
+            this.mbtneklevd.Size = new System.Drawing.Size(64, 36);
+            this.mbtneklevd.TabIndex = 24;
+            this.mbtneklevd.Text = "Ekle";
+            this.mbtneklevd.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.mbtneklevd.UseAccentColor = false;
+            this.mbtneklevd.UseVisualStyleBackColor = true;
+            this.mbtneklevd.Click += new System.EventHandler(this.mbtneklevd_Click);
+            // 
+            // mtxtidverilenders
+            // 
+            this.mtxtidverilenders.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.mtxtidverilenders.Depth = 0;
+            this.mtxtidverilenders.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.mtxtidverilenders.LeadingIcon = null;
+            this.mtxtidverilenders.Location = new System.Drawing.Point(615, 14);
+            this.mtxtidverilenders.MaxLength = 50;
+            this.mtxtidverilenders.MouseState = MaterialSkin.MouseState.OUT;
+            this.mtxtidverilenders.Multiline = false;
+            this.mtxtidverilenders.Name = "mtxtidverilenders";
+            this.mtxtidverilenders.ReadOnly = true;
+            this.mtxtidverilenders.Size = new System.Drawing.Size(157, 50);
+            this.mtxtidverilenders.TabIndex = 21;
+            this.mtxtidverilenders.Text = "";
+            this.mtxtidverilenders.TrailingIcon = null;
+            // 
+            // mlvVerilenDersler
+            // 
+            this.mlvVerilenDersler.AutoSizeTable = false;
+            this.mlvVerilenDersler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.mlvVerilenDersler.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.mlvVerilenDersler.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.cvdid,
+            this.cvdOgretmenID,
+            this.cvdOgretmenAdı,
+            this.cvdOgretmenSoyadAdı,
+            this.cvdDersID,
+            this.cvdDersAdı});
+            this.mlvVerilenDersler.Depth = 0;
+            this.mlvVerilenDersler.FullRowSelect = true;
+            this.mlvVerilenDersler.HideSelection = false;
+            this.mlvVerilenDersler.Location = new System.Drawing.Point(25, 65);
+            this.mlvVerilenDersler.MinimumSize = new System.Drawing.Size(200, 100);
+            this.mlvVerilenDersler.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.mlvVerilenDersler.MouseState = MaterialSkin.MouseState.OUT;
+            this.mlvVerilenDersler.Name = "mlvVerilenDersler";
+            this.mlvVerilenDersler.OwnerDraw = true;
+            this.mlvVerilenDersler.Size = new System.Drawing.Size(560, 156);
+            this.mlvVerilenDersler.TabIndex = 20;
+            this.mlvVerilenDersler.UseCompatibleStateImageBehavior = false;
+            this.mlvVerilenDersler.View = System.Windows.Forms.View.Details;
+            this.mlvVerilenDersler.MouseClick += new System.Windows.Forms.MouseEventHandler(this.mlvVerilenDersler_MouseClick);
+            // 
+            // cvdid
+            // 
+            this.cvdid.Text = "ID";
+            // 
+            // cvdOgretmenID
+            // 
+            this.cvdOgretmenID.Text = "Öğretmen ID";
+            // 
+            // cvdOgretmenAdı
+            // 
+            this.cvdOgretmenAdı.Text = "Öğretmen Adı";
+            this.cvdOgretmenAdı.Width = 200;
+            // 
+            // cvdOgretmenSoyadAdı
+            // 
+            this.cvdOgretmenSoyadAdı.Text = "Öğretmen Soyadı";
+            this.cvdOgretmenSoyadAdı.Width = 200;
+            // 
+            // cvdDersID
+            // 
+            this.cvdDersID.Text = "Ders Id";
+            // 
+            // cvdDersAdı
+            // 
+            this.cvdDersAdı.Text = "Ders Adı";
+            this.cvdDersAdı.Width = 200;
+            // 
+            // materialLabel7
+            // 
+            this.materialLabel7.AutoSize = true;
+            this.materialLabel7.Depth = 0;
+            this.materialLabel7.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel7.Location = new System.Drawing.Point(32, 32);
+            this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel7.Name = "materialLabel7";
+            this.materialLabel7.Size = new System.Drawing.Size(102, 19);
+            this.materialLabel7.TabIndex = 1;
+            this.materialLabel7.Text = "Verilen Dersler";
+            // 
             // imageList1
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
@@ -1063,21 +1661,34 @@ namespace OkulSistemiFinal
             this.imageList1.Images.SetKeyName(3, "home.png");
             this.imageList1.Images.SetKeyName(4, "exchange.png");
             // 
-            // tpDersSecim
+            // mdpogradisoyadi
             // 
-            this.tpDersSecim.ImageKey = "exchange.png";
-            this.tpDersSecim.Location = new System.Drawing.Point(4, 39);
-            this.tpDersSecim.Name = "tpDersSecim";
-            this.tpDersSecim.Size = new System.Drawing.Size(786, 340);
-            this.tpDersSecim.TabIndex = 4;
-            this.tpDersSecim.Text = "Ders Seçimi";
-            this.tpDersSecim.UseVisualStyleBackColor = true;
+            this.mdpogradisoyadi.AutoResize = false;
+            this.mdpogradisoyadi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.mdpogradisoyadi.Depth = 0;
+            this.mdpogradisoyadi.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.mdpogradisoyadi.DropDownHeight = 174;
+            this.mdpogradisoyadi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.mdpogradisoyadi.DropDownWidth = 121;
+            this.mdpogradisoyadi.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.mdpogradisoyadi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mdpogradisoyadi.FormattingEnabled = true;
+            this.mdpogradisoyadi.IntegralHeight = false;
+            this.mdpogradisoyadi.ItemHeight = 43;
+            this.mdpogradisoyadi.Location = new System.Drawing.Point(603, 469);
+            this.mdpogradisoyadi.MaxDropDownItems = 4;
+            this.mdpogradisoyadi.MouseState = MaterialSkin.MouseState.OUT;
+            this.mdpogradisoyadi.Name = "mdpogradisoyadi";
+            this.mdpogradisoyadi.Size = new System.Drawing.Size(157, 49);
+            this.mdpogradisoyadi.StartIndex = 0;
+            this.mdpogradisoyadi.TabIndex = 26;
+            this.mdpogradisoyadi.SelectedIndexChanged += new System.EventHandler(this.mdpogradisoyadi_SelectedIndexChanged);
             // 
             // OkulSistemi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 800);
             this.Controls.Add(this.materialTabControl1);
             this.DrawerTabControl = this.materialTabControl1;
             this.Name = "OkulSistemi";
@@ -1097,6 +1708,8 @@ namespace OkulSistemiFinal
             this.tpDersler.PerformLayout();
             this.tpÖğretmen.ResumeLayout(false);
             this.tpÖğretmen.PerformLayout();
+            this.tpDersSecim.ResumeLayout(false);
+            this.tpDersSecim.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1171,5 +1784,46 @@ namespace OkulSistemiFinal
         private System.Windows.Forms.ColumnHeader mldetayOgrenciAdi;
         private System.Windows.Forms.ColumnHeader mldetayOgrenciSoyadi;
         private System.Windows.Forms.TabPage tpDersSecim;
+        private MaterialSkin.Controls.MaterialLabel materialLabel7;
+        private MaterialSkin.Controls.MaterialButton mbtnsilvd;
+        private MaterialSkin.Controls.MaterialButton mbtneklevd;
+        private MaterialSkin.Controls.MaterialListView mlvVerilenDersler;
+        private System.Windows.Forms.ColumnHeader cvdid;
+        private System.Windows.Forms.ColumnHeader cvdOgretmenID;
+        private System.Windows.Forms.ColumnHeader cvdOgretmenAdı;
+        private System.Windows.Forms.ColumnHeader cvdDersID;
+        private System.Windows.Forms.ColumnHeader cvdDersAdı;
+        private System.Windows.Forms.ColumnHeader cvdOgretmenSoyadAdı;
+        private MaterialSkin.Controls.MaterialLabel lblderssecim;
+        private MaterialSkin.Controls.MaterialComboBox mldpdersvd;
+        private MaterialSkin.Controls.MaterialComboBox mldpogrvd;
+        private MaterialSkin.Controls.MaterialTextBox mtxtidverilenders;
+        private MaterialSkin.Controls.MaterialComboBox mldpdersad;
+        private MaterialSkin.Controls.MaterialComboBox mldpograd;
+        private MaterialSkin.Controls.MaterialButton mbtnsilad;
+        private MaterialSkin.Controls.MaterialButton mbtneklead;
+        private MaterialSkin.Controls.MaterialTextBox mtxtidad;
+        private MaterialSkin.Controls.MaterialListView mlvAlinanDersler;
+        private System.Windows.Forms.ColumnHeader cladid;
+        private System.Windows.Forms.ColumnHeader cladogradi;
+        private System.Windows.Forms.ColumnHeader cladogrencisoyadi;
+        private System.Windows.Forms.ColumnHeader claddersid;
+        private System.Windows.Forms.ColumnHeader claddersadi;
+        private MaterialSkin.Controls.MaterialLabel materialLabel8;
+        private MaterialSkin.Controls.MaterialLabel lblderssecimad;
+        private MaterialSkin.Controls.MaterialLabel mlblogrnot;
+        private MaterialSkin.Controls.MaterialButton mbtnsilogrnot;
+        private MaterialSkin.Controls.MaterialButton mbtnekleogrnot;
+        private MaterialSkin.Controls.MaterialTextBox mtxtidnot;
+        private MaterialSkin.Controls.MaterialLabel materialLabel10;
+        private MaterialSkin.Controls.MaterialListView mlvnot;
+        private System.Windows.Forms.ColumnHeader clidogrnot;
+        private System.Windows.Forms.ColumnHeader clogadi;
+        private MaterialSkin.Controls.MaterialTextBox mtxtnotogre;
+        private System.Windows.Forms.ColumnHeader clogrsoyadi;
+        private System.Windows.Forms.ColumnHeader cldersadi;
+        private System.Windows.Forms.ColumnHeader clogrnot;
+        private MaterialSkin.Controls.MaterialComboBox mdpdersogr;
+        private MaterialSkin.Controls.MaterialComboBox mdpogradisoyadi;
     }
 }
